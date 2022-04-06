@@ -1,0 +1,81 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+.container {
+  /* width: 100vh;
+  height: 100vw; Nifamadika mihintsy ilay "vh" sy "vw" izy satria nisy rotation donc miova daholo */
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 300vw;
+  transform: rotate(90deg) translateY(-100vh);
+  /* Eny am Top left no mi-rotate ilay izy */
+  transform-origin: top left;
+}
+
+/* Manafina ilay scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/***************************************************************************************************************************/
+
+section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center;
+  box-shadow: -1px 0px 4px black;
+}
+
+#one {
+  background-color: gainsboro;
+}
+
+#two {
+  background-color: crimson;
+}
+
+#three {
+  background-color: teal;
+}
+
+.text {
+  font-size: 5rem;
+  user-select: none;
+  transition: 0.5s;
+}
+
+.text:hover {
+  transform: scale(1.5);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
